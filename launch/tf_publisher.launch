@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<launch>
+   <arg name="calib_path" default="$(find rsun_uas)/param/sensors/"/>
+   
+   <node pkg="tf" type="static_transform_publisher" name="imu_flu_to_imu" args="0 0 0 3.14159265359 0 0 /imu_flu /imu 100" />
+
+   <!-- TODO Add base_link to IMU transform-->
+
+   <node pkg="rsun_uas" type="tf_publisher.py" name="tf_publisher" output="screen">
+      <param name="calib_path" value="$(arg calib_path)"/>
+   </node>
+
+
+</launch>
