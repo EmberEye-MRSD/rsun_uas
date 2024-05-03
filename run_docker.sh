@@ -1,0 +1,4 @@
+#!/bin/bash
+xhost  + 
+docker run -it  --gpus all   --env="DISPLAY"  --env="NVIDIA_DRIVER_CAPABILITIES=all"   --env="QT_X11_NO_MITSHM=1"     --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"   --volume="${HOME}/gangadhar:/home/gangadhar:rw" --volume="${HOME}/data:/home/data:rw" --volume="${HOME}/development:/home/development:rw" shashwat/ros:noetic_v2   bash -it -c bash
+# docker run -it --net=host  --gpus all   --env="DISPLAY"  --env="NVIDIA_DRIVER_CAPABILITIES=all"   --env="QT_X11_NO_MITSHM=1"     --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"   --volume="${HOME}/gangadhar:/home/gangadhar:rw" --volume="${HOME}/data:/home/data:rw" --volume="${HOME}/development:/home/development:rw" shashwat/ros:noetic_v2   bash -it -c bash
