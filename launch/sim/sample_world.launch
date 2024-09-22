@@ -1,0 +1,6 @@
+<launch>
+
+<arg name="world_name" default="$(find rsun_uas)/worlds/nrec_dome_with_obstacles.world"/>
+<node name="gazebo" pkg="gazebo_ros" type="gazebo" args="$(arg world_name)" respawn="false" output="screen" />
+
+</launch>
