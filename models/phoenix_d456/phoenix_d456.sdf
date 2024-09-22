@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name='phoenix_d456'>
+    <include>
+      <uri>model://phoenix</uri>
+    </include>
+
+    <include>
+      <uri>model://rs_d456</uri>
+      <pose>0.1 0 0 0 0 0</pose>
+    </include>
+    <joint name="depth_camera_joint" type="revolute">
+      <child>rs_d456::link</child>
+      <parent>phoenix::base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+      </axis>
+    </joint>
+
+  </model>
+</sdf>

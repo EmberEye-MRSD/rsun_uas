@@ -11,10 +11,10 @@
     <arg name="Y" default="0"/>
     <!-- vehicle model and world -->
     <arg name="est" default="ekf2"/>
-    <arg name="vehicle" default="iris"/>
-    <arg name="world" default="$(find mavlink_sitl_gazebo)/worlds/empty.world"/>
-    <arg name="sdf" default="$(find mavlink_sitl_gazebo)/models/$(arg vehicle)/$(arg vehicle).sdf"/>
-    <env name="PX4_SIM_MODEL" value="gazebo-classic_$(arg vehicle)" />
+    <arg name="vehicle" default="phoenix_d456"/>
+    <arg name="world" default="$(find rsun_uas)/worlds/nrec_dome.world"/>
+    <arg name="sdf" default="$(find rsun_uas)/models/$(arg vehicle)/$(arg vehicle).sdf"/>
+    <env name="PX4_SIM_MODEL" value="gazebo-classic_iris" />
 
     <!-- gazebo configs -->
     <arg name="gui" default="true"/>
@@ -42,7 +42,12 @@
     <!-- gazebo model -->
     <node name="$(anon vehicle_spawn)" pkg="gazebo_ros" type="spawn_model" output="screen" args="-sdf -file $(arg sdf) -model $(arg vehicle) -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg R) -P $(arg P) -Y $(arg Y)"/>
 
-    <node pkg="rsun_state_estimation" type="gz_gt_pose.py" name="gz_gt_pose">
-        
+    <node pkg="rsun_uas" type="gazebo_mavros_vio_bridge.py" name="gz_gt_pose">
+        <remap from="/phoenix_d456/gt_odom" to="/phoenix_d456/gt_odom"/>
+        <remap from="/mavros/vision_pose/pose" to="/mavros/vision_pose/pose"/>
     </node>
-</launch>
+
+    <!-- Add static TF publisher for D456 -->
+    <node pkg="tf" type="static_transform_publisher" name="d456_to_base_link" args="0.10 0 0 -1.57079632679 0 -1.57079632679 /base_link /camera_link 100" />
+        
+=</launch>

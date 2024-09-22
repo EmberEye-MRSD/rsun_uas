@@ -1,0 +1,151 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="grass_enclosed_world">
+    <!-- Light source -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- Ground plane with grass texture -->
+    <model name="ground_plane">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>50 50</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>50 50</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grass</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Wall models -->
+    <!-- Long walls along the X axis (24 meters) -->
+    <model name="wall_x_positive">
+      <static>true</static>
+      <pose>10 9 1.5 0 0 0</pose> <!-- Positioned along the positive Y-axis -->
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>24 0.1 3</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>24 0.1 3</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.8 0.8 0.8 1</ambient>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="wall_x_negative">
+      <static>true</static>
+      <pose>10 -9 1.5 0 0 0</pose> <!-- Positioned along the negative Y-axis -->
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>24 0.1 3</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>24 0.1 3</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.8 0.8 0.8 1</ambient>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Short walls along the Y axis (18 meters) -->
+    <model name="wall_y_positive">
+      <static>true</static>
+      <pose>22 0 1.5 0 0 0</pose> <!-- Positioned along the positive X-axis -->
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.1 18 3</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.1 18 3</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.8 0.8 0.8 1</ambient>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="wall_y_negative">
+      <static>true</static>
+      <pose>-2 0 1.5 0 0 0</pose> <!-- Positioned along the negative X-axis -->
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.1 18 3</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.1 18 3</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.8 0.8 0.8 1</ambient>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Physics settings -->
+    <physics type="ode">
+      <gravity>0 0 -9.8</gravity>
+    </physics>
+
+  </world>
+</sdf>

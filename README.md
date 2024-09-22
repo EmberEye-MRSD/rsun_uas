@@ -2,6 +2,40 @@
 
 Houses all utils and launches for overall system bringup on the physical/simulated UAS.
 
+## Simulation Setup
+
+We use PX4 SITL (v1.14.3) along with Gazebo. We assume that the use has a working setup for the same.
+
+``` bash
+# Step 1: Clone the repo
+cd <path_to_your_ws>/src
+git clone https://github.com/EmberEye-MRSD/rsun_uas.git
+
+# Step 2: Update submodules
+cd rsun_uas
+git submodule update --init --recursive
+
+# Step 3: Build the package
+cd <to_workspace_root>
+catkin build rsun_uas
+
+# Step 4: Add the following lines to your .bashrc (assumes that you have already added the workspace source command)
+export GAZEBO_MODEL_PATH=$(rospack find rsun_uas)/models:${GAZEBO_MODEL_PATH}
+export GAZEBO_RESOURCE_PATH=$(rospack find rsun_uas)/worlds:${GAZEBO_RESOURCE_PATH}
+
+# Step 5: Source .bashrc
+source ~/.bashrc
+
+# Step 6: Start the simulation
+roslaunch rsun_uas mavros_posix_sitl.launch
+
+
+```
+
+
+
+## Docker Instructions
+
 ### Building the Docker Image
 
 The running "*rsun_fire_mapping" can be run directly by building it under the docker container.
