@@ -24,12 +24,12 @@
     <arg name="init_z" value="$(arg init_z)"/> 
 
     <!-- sensor pose: transform of camera frame in the world frame -->
-    <arg name="sensor_pose_topic" value=""/>
+    <arg name="sensor_pose_topic" value="/camera/pose"/>
     <!-- depth topic: depth image, 640x480 by default -->
     <!-- cloud topic: point cloud measurement  -->
     <!-- subscribe ONLY TO ONE of the two topics -->
     <arg name="depth_topic" value="/phoenix_d456/camera/depth/image_raw"/>
-    <!-- <arg name="cloud_topic" value="/pcl_render_node/cloud"/> -->
+    <arg name="cloud_topic" value="/pcl_render_node/cloud"/>
 
     <!-- intrinsic params of the depth camera -->
     <arg name="cx" value="320.5"/>

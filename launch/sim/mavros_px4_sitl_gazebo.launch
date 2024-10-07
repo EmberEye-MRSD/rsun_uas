@@ -12,8 +12,9 @@
     <!-- vehicle model and world -->
     <arg name="est" default="ekf2"/>
     <arg name="vehicle" default="phoenix_d456"/>
-    <arg name="world" default="$(find rsun_uas)/worlds/nrec_dome.world"/>
+    <arg name="world" default="$(find rsun_uas)/worlds/nrec_dome_with_obstacles.world"/>
     <arg name="sdf" default="$(find rsun_uas)/models/$(arg vehicle)/$(arg vehicle).sdf"/>
+    
 
     <!-- gazebo configs -->
     <arg name="gui" default="true"/>
