@@ -42,7 +42,7 @@
           <cameraName>camera</cameraName>
           <robotNamespace></robotNamespace>
           <alwaysOn>true</alwaysOn>
-          <updateRate>10</updateRate>
+          <updateRate>30</updateRate>
           <pointCloudCutoff>0.2</pointCloudCutoff>
           <pointCloudCutoffMax>6.00</pointCloudCutoffMax>
           <imageTopicName>rgb/image_raw</imageTopicName>
