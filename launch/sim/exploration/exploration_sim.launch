@@ -21,7 +21,8 @@
     <arg name="map_size_y_" value="$(arg map_size_y)"/>
     <arg name="map_size_z_" value="$(arg map_size_z)"/>
 
-    <arg name="box_min_x" value="-3.0"/>
+    <!-- <arg name="box_min_x" value="-3.0"/> -->
+    <arg name="box_min_x" value="11.0"/>
     <arg name="box_min_y" value="-10.0"/>
     <arg name="box_min_z" value=" -0.1"/>
     <arg name="box_max_x" value="25.0"/>
