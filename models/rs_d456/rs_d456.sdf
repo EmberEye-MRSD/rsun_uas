@@ -40,7 +40,7 @@
           <noise>
             <type>gaussian</type>
             <mean>0</mean>
-            <stddev>0.1</stddev>
+            <stddev>0.05</stddev>
           </noise>
         </camera>
         <plugin filename="libgazebo_ros_openni_kinect.so" name="camera_controller">
