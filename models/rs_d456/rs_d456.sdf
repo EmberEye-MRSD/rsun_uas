@@ -37,11 +37,11 @@
             <near>0.001</near> <!-- Intel RealSense D455 -->
             <far>65.535</far> <!-- Intel RealSense D455 -->
           </clip>
-          <noise>
+          <!-- <noise>
             <type>gaussian</type>
             <mean>0</mean>
             <stddev>0.05</stddev>
-          </noise>
+          </noise> -->
         </camera>
         <plugin filename="libgazebo_ros_openni_kinect.so" name="camera_controller">
           <cameraName>camera</cameraName>
