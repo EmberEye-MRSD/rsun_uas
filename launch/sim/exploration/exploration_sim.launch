@@ -11,9 +11,6 @@
   <!-- topic of your odometry such as VIO or LIO -->
   <arg name="odom_topic" value="/mavros/local_position/odom" />
 
-  <!-- Static TF world map -->
-  <node pkg="tf" type="static_transform_publisher" name="world_map" args="0 0 0 0 0 0 world map 100" />
-
   <!-- main algorithm params -->
   <include file="$(find rsun_uas)/launch/sim/exploration/algorithm.xml">
 
@@ -55,7 +52,7 @@
 
     <remap from="/odom_world" to="$(arg odom_topic)"/>
     <param name="traj_server/time_forward" value="1.5" type="double"/>
-    <param name="traj_server/pub_traj_id" value="5" type="int"/>
+    <param name="traj_server/pub_traj_id" value="0" type="int"/>
 
     <param name="perception_utils/top_angle" value="0.56125" type="double"/>
     <param name="perception_utils/left_angle" value="0.69222" type="double"/>

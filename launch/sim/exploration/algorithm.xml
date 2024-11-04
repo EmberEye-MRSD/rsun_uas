@@ -23,16 +23,16 @@
   <arg name="max_vel"/>
   <arg name="max_acc"/>
 
-  <node pkg="exploration_manager" type="camera_pose_pub.py" name="camera_pose_publisher">
-
-  </node>
-
   <!-- main node -->
   <node pkg="exploration_manager" name="exploration_node" type="exploration_node" output="screen">
     <remap from ="/odom_world" to="$(arg odometry_topic)"/>
     <remap from ="/map_ros/pose"   to = "$(arg sensor_pose_topic)"/> 
     <remap from ="/map_ros/depth" to = "$(arg depth_topic)"/>
     <remap from ="/map_ros/cloud" to="$(arg cloud_topic)"/>
+    <remap from="/exploration/state" to="/exploration/fsm_state"/>
+
+    <!-- Remap trigger topic to avoid conflict -->
+    <remap from="/waypoint_generator/waypoints" to="/exploration/trigger"/>
 
     <param name="sdf_map/resolution"      value="0.1" />
     <param name="sdf_map/map_size_x"   value="$(arg map_size_x_)" /> 
