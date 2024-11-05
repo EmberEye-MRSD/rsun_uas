@@ -34,15 +34,15 @@
     <!-- Remap trigger topic to avoid conflict -->
     <remap from="/waypoint_generator/waypoints" to="/exploration/trigger"/>
 
-    <param name="sdf_map/resolution"      value="0.1" />
+    <param name="sdf_map/resolution"      value="0.2" />
     <param name="sdf_map/map_size_x"   value="$(arg map_size_x_)" /> 
     <param name="sdf_map/map_size_y"   value="$(arg map_size_y_)" /> 
     <param name="sdf_map/map_size_z"   value="$(arg map_size_z_)" /> 
     <!-- <param name="sdf_map/obstacles_inflation"     value="0.099" />  -->
-    <param name="sdf_map/obstacles_inflation"     value="0.20" />
+    <param name="sdf_map/obstacles_inflation"     value="0.50" />
     <param name="sdf_map/local_bound_inflate"    value="0.5"/>
-    <param name="sdf_map/local_map_margin" value="100"/>
-    <param name="sdf_map/ground_height"        value="-0.1"/>
+    <param name="sdf_map/local_map_margin" value="50"/>
+    <param name="sdf_map/ground_height"        value="0.75"/>
     <param name="sdf_map/default_dist"        value="0.0"/>
     
     <param name="sdf_map/p_hit"  value="0.65"/>
@@ -87,20 +87,20 @@
     <!-- <param name="fsm/thresh_replan1" value="0.00001" type="double"/> -->
     <!-- <param name="fsm/thresh_replan2" value="100.0" type="double"/> -->
     <!-- <param name="fsm/thresh_replan3" value="0.1" type="double"/> -->
-    <param name="fsm/replan_time" value="0.100" type="double"/>
+    <param name="fsm/replan_time" value="0" type="double"/>
 
     <!-- Exploration manager -->
 
     <param name="exploration/refine_local" value="true" type="bool"/>
     <param name="exploration/refined_num" value="7" type="int"/>
-    <param name="exploration/refined_radius" value="5.0" type="double"/>
+    <param name="exploration/refined_radius" value="2.5" type="double"/>
     <param name="exploration/max_decay" value="0.8" type="double"/>
-    <param name="exploration/top_view_num" value="15" type="int"/>
+    <param name="exploration/top_view_num" value="25" type="int"/>
     <param name="exploration/vm" value="$(eval 1.0 * arg('max_vel'))" type="double"/>
     <param name="exploration/am" value="$(eval 1.0 * arg('max_acc'))" type="double"/>
-    <param name="exploration/yd" value="$(eval 30 * 3.1415926 / 180.0)" type="double"/>
-    <param name="exploration/ydd" value="$(eval 60 * 3.1415926 / 180.0)" type="double"/>
-    <param name="exploration/w_dir" value="1.5" type="double"/>
+    <param name="exploration/yd" value="$(eval 10 * 3.1415926 / 180.0)" type="double"/>
+    <param name="exploration/ydd" value="$(eval 5 * 3.1415926 / 180.0)" type="double"/>
+    <param name="exploration/w_dir" value="2.5" type="double"/>
     <param name="exploration/tsp_dir" value="$(find lkh_tsp_solver)/resource" type="string"/>
     <param name="exploration/relax_time" value="1.0" type="double"/>
 
@@ -121,16 +121,16 @@
     <param name="perception_utils/top_angle" value="0.436" type="double"/>;
     <param name="perception_utils/left_angle" value="0.7592" type="double"/>;
     <param name="perception_utils/right_angle" value="0.7592" type="double"/>;
-    <param name="perception_utils/max_dist" value="4.5" type="double"/>;
-    <param name="perception_utils/vis_dist" value="4.0" type="double"/>;
+    <param name="perception_utils/max_dist" value="5.5" type="double"/>;
+    <param name="perception_utils/vis_dist" value="5.0" type="double"/>;
 
 
-    <param name="heading_planner/yaw_diff" value="$(eval 15 * 3.1415926 / 180.0)" type="double"/>
+    <param name="heading_planner/yaw_diff" value="$(eval 10 * 3.1415926 / 180.0)" type="double"/>
     <param name="heading_planner/half_vert_num" value="5" type="int"/>
     <param name="heading_planner/lambda1" value="2.0" type="double"/>
     <param name="heading_planner/lambda2" value="1.0" type="double"/>
-    <param name="heading_planner/max_yaw_rate" value="$(eval 60 * 3.1415926 / 180.0)" type="double"/>
-    <param name="heading_planner/w" value="20000.0" type="double"/>
+    <param name="heading_planner/max_yaw_rate" value="$(eval 5 * 3.1415926 / 180.0)" type="double"/>
+    <param name="heading_planner/w" value="200000.0" type="double"/>
     <param name="heading_planner/weight_type" value="1" type="double"/>
 
   <!-- planner manager -->
@@ -172,7 +172,7 @@
 
   <!-- trajectory optimization -->
     <param name="optimization/ld_smooth" value="5.0" type="double"/>
-    <param name="optimization/ld_dist" value="10.0" type="double"/>
+    <param name="optimization/ld_dist" value="15.0" type="double"/>
     <param name="optimization/ld_feasi" value="2.0" type="double"/>
     <param name="optimization/ld_start" value="100.0" type="double"/>
     <param name="optimization/ld_end" value="0.5" type="double"/>
@@ -180,15 +180,15 @@
     <param name="optimization/ld_waypt" value="0.5" type="double"/>
     <param name="optimization/ld_view" value="0.0" type="double"/>
     <param name="optimization/ld_time" value="1.0" type="double"/>
-    <param name="optimization/dist0" value="0.7" type="double"/>
+    <param name="optimization/dist0" value="1.00" type="double"/>
     <param name="optimization/max_vel" value="$(arg max_vel)" type="double"/>
     <param name="optimization/max_acc" value="$(arg max_acc)" type="double"/>
     <param name="optimization/algorithm1" value="15" type="int"/>
     <param name="optimization/algorithm2" value="11" type="int"/>
     <param name="optimization/max_iteration_num1" value="2" type="int"/>
-    <param name="optimization/max_iteration_num2" value="2000" type="int"/>
-    <param name="optimization/max_iteration_num3" value="200" type="int"/>
-    <param name="optimization/max_iteration_num4" value="200" type="int"/>
+    <param name="optimization/max_iteration_num2" value="4000" type="int"/>
+    <param name="optimization/max_iteration_num3" value="400" type="int"/>
+    <param name="optimization/max_iteration_num4" value="400" type="int"/>
 
     <param name="optimization/max_iteration_time1" value="0.001" type="double"/>
     <param name="optimization/max_iteration_time2" value="0.005" type="double"/>
@@ -196,7 +196,7 @@
     <param name="optimization/max_iteration_time4" value="0.003" type="double"/>
     <param name="bspline/limit_vel" value="$(arg max_vel)" type="double"/>
     <param name="bspline/limit_acc" value="$(arg max_acc)" type="double"/>
-    <param name="bspline/limit_ratio" value="1.1" type="double"/>
+    <param name="bspline/limit_ratio" value="1.0" type="double"/>
     <param name="bspline/limit_vel" value="$(arg max_vel)" type="double"/>
     <param name="bspline/limit_acc" value="$(arg max_acc)" type="double"/>
   </node>
