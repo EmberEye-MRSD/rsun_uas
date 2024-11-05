@@ -6,21 +6,24 @@ windows:
       - cd ~/ # run as a first command in all panes
     panes:
       - shell_command: # RS driver
-          - roslaunch realsense2_camera rs_camera.launch
+        - roslaunch realsense2_camera rs_camera.launch
       - shell_command: # FLIR driver
-          - roslaunch rsun_drivers flir_boson_image_driver.launch
+        - sleep 2
+        - roslaunch rsun_drivers flir_boson_image_driver.launch
       - shell_command: # VINS RViz config
-          - roslaunch vins vins_rviz.launch
+        - sleep 3
+        - roslaunch vins vins_rviz.launch
       - shell_command: # VINS frame transformations
-          - roslaunch vins_utils odom_transformer.launch
+        - sleep 3
+        - roslaunch vins_utils odom_transformer.launch
       - shell_command: # VINS
-          - cd ros_ws
-          - sleep 10
-          - rosrun vins vins_node src/rsun_state_estimation/VINS-Fusion/config/rsun/euroc_stereo_imu_config_calibrated.yaml
+        - cd ros_ws
+        - sleep 10
+        - rosrun vins vins_node src/rsun_state_estimation/VINS-Fusion/config/rsun/euroc_stereo_imu_config_calibrated.yaml
       - shell_command: # Fire Localization
-          - sleep 12
-          - roslaunch rsun_fire_localization realsense_thermal.launch
+        - sleep 12
+        - roslaunch rsun_fire_localization realsense_thermal.launch
       - shell_command: # Fire Mapping
-          - cd ros_ws/src/rsun_fire_localization/src
-          - sleep 12
-          - python3 fire_mapping.py
+        - cd ros_ws/src/rsun_fire_localization/src
+        - sleep 12
+        - python3 fire_mapping.py
