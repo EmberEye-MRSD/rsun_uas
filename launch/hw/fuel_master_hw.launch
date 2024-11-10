@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<launch>
+
+   <!-- Static TF world map -->
+  <node pkg="tf" type="static_transform_publisher" name="world_map" args="0 0 0 0 0 0 world map 100" />
+
+  <node pkg="exploration_manager" type="camera_pose_pub.py" name="camera_pose_publisher" output="screen">
+
+  </node>
+
+  <!-- <include file="$(find rsun_uas)/launch/hw/fast_planner/topo_replan.launch" /> -->
+
+  <include file="$(find rsun_uas)/launch/hw/exploration/exploration.launch" />
+
+  <!-- RVIz with our config-->
+  <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find rsun_uas)/rviz/combined.rviz" required="true" output="screen" /> -->
+
+  <!-- <include file="$(find rsun_uas)/launch/sim/fast_planner/kino_replan.launch" /> -->
+
+
+</launch>
