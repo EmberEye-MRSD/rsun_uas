@@ -1,0 +1,50 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/vulcan/cer_ws/devel/include/**",
+        "/home/vulcan/rsun_ws/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/vulcan/rsun_ws/src/fast_exploration_planner/fuel_planner/active_perception/include/**",
+        "/home/vulcan/aruco_fisheye_ws/src/aruco_pipeline/include/**",
+        "/home/vulcan/cer_ws/src/CERLAB-UAV-Autonomy/autonomous_flight/include/**",
+        "/home/vulcan/rsun_ws/src/fast_exploration_planner/fuel_planner/bspline/include/**",
+        "/home/vulcan/rsun_ws/src/fast_exploration_planner/fuel_planner/bspline_opt/include/**",
+        "/home/vulcan/rsun_ws/src/fast_exploration_planner/fuel_planner/exploration_manager/include/**",
+        "/home/vulcan/cer_ws/src/CERLAB-UAV-Autonomy/global_planner/include/**",
+        "/home/vulcan/rsun_ws/src/fast_exploration_planner/fuel_planner/utils/lkh_tsp_solver/include/**",
+        "/home/vulcan/rsun_ws/src/fast_exploration_planner/uav_simulator/local_sensing/include/**",
+        "/home/vulcan/cer_ws/src/CERLAB-UAV-Autonomy/map_manager/include/**",
+        "/home/vulcan/rsun_ws/src/fast_exploration_planner/uav_simulator/Utils/multi_map_server/include/**",
+        "/home/vulcan/cer_ws/src/CERLAB-UAV-Autonomy/onboard_detector/include/**",
+        "/home/vulcan/rsun_ws/src/fast_exploration_planner/fuel_planner/path_searching/include/**",
+        "/home/vulcan/sim_ws/src/phoenix_gazebo/include/**",
+        "/home/vulcan/rsun_ws/src/fast_exploration_planner/fuel_planner/plan_env/include/**",
+        "/home/vulcan/rsun_ws/src/fast_exploration_planner/fuel_planner/plan_manage/include/**",
+        "/home/vulcan/rsun_ws/src/fast_exploration_planner/fuel_planner/poly_traj/include/**",
+        "/home/vulcan/rsun_ws/src/fast_exploration_planner/uav_simulator/Utils/pose_utils/include/**",
+        "/home/vulcan/rsun_ws/src/fast_exploration_planner/uav_simulator/Utils/quadrotor_msgs/include/**",
+        "/home/vulcan/rsun_ws/src/fast_exploration_planner/uav_simulator/so3_control/include/**",
+        "/home/vulcan/rsun_ws/src/fast_exploration_planner/uav_simulator/so3_disturbance_generator/include/**",
+        "/home/vulcan/rsun_ws/src/fast_exploration_planner/uav_simulator/so3_quadrotor_simulator/include/**",
+        "/home/vulcan/cer_ws/src/CERLAB-UAV-Autonomy/time_optimizer/include/**",
+        "/home/vulcan/cer_ws/src/CERLAB-UAV-Autonomy/tracking_controller/include/**",
+        "/home/vulcan/rsun_ws/src/fast_exploration_planner/fuel_planner/traj_utils/include/**",
+        "/home/vulcan/cer_ws/src/CERLAB-UAV-Autonomy/trajectory_planner/include/**",
+        "/home/vulcan/cer_ws/src/CERLAB-UAV-Autonomy/uav_simulator/include/**",
+        "/home/vulcan/rsun_ws/src/fast_exploration_planner/uav_simulator/Utils/uav_utils/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

@@ -8,12 +8,12 @@
 
   </node>
 
-  <include file="$(find rsun_uas)/launch/sim/fast_planner/topo_replan.launch" />
+  <!-- <include file="$(find rsun_uas)/launch/sim/fast_planner/topo_replan.launch" /> -->
 
   <include file="$(find rsun_uas)/launch/sim/exploration/exploration_sim.launch" />
 
   <!-- RVIz with our config-->
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find rsun_uas)/rviz/combined.rviz" required="true" output="screen" />
+  <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find rsun_uas)/rviz/combined.rviz" required="true" output="screen" /> -->
 
   <!-- <include file="$(find rsun_uas)/launch/sim/fast_planner/kino_replan.launch" /> -->
 

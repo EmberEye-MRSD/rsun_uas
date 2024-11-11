@@ -1,0 +1,14 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/vulcan/cer_ws/devel/lib/python3/dist-packages",
+        "/home/vulcan/rsun_ws/devel/lib/python3/dist-packages",
+        "/home/vulcan/aruco_fisheye_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/vulcan/cer_ws/devel/lib/python3/dist-packages",
+        "/home/vulcan/rsun_ws/devel/lib/python3/dist-packages",
+        "/home/vulcan/aruco_fisheye_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages"
+    ]
+}
